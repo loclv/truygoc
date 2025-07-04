@@ -30,23 +30,24 @@ First, install the dependencies:
 ```bash
 bun install
 ```
+
 ## Database Setup
 
 This project uses SQLite with Drizzle ORM.
 
 1. Start the local SQLite database:
+
 ```bash
 cd apps/server && bun db:local
 ```
 
-
 2. Update your `.env` file in the `apps/server` directory with the appropriate connection details if needed.
 
 3. Apply the schema to your database:
+
 ```bash
 bun db:push
 ```
-
 
 Then, run the development server:
 
@@ -58,11 +59,9 @@ Open [http://localhost:3001](http://localhost:3001) in your browser to see the w
 Use the Expo Go app to run the mobile application.
 The API is running at [http://localhost:3000](http://localhost:3000).
 
-
-
 ## Project Structure
 
-```
+```text
 truyGoc/
 ├── apps/
 │   ├── web/         # Frontend application (React + TanStack Router)
@@ -88,3 +87,44 @@ truyGoc/
 - `cd apps/web && bun desktop:build`: Build Tauri desktop app
 - `cd apps/docs && bun dev`: Start documentation site
 - `cd apps/docs && bun build`: Build documentation site
+
+Your project will be available at:
+
+- Frontend: <http://localhost:3001>
+- Backend API: <http://localhost:3000>
+- Docs: <http://localhost:4321>
+
+NOTE: For Expo connectivity issues, update apps/native/.env with your local IP address:
+EXPO_PUBLIC_SERVER_URL=http://<YOUR_LOCAL_IP>:3000
+
+Database commands:
+
+- Apply schema: `bun db:push`
+- Database UI: `bun db:studio`
+- Start local DB (if needed): `cd apps/server && bun db:local`
+
+Desktop app with Tauri:
+
+- Start desktop app: `cd apps/web && bun desktop:dev`
+- Build desktop app: `cd apps/web && bun desktop:build`
+
+NOTE: Tauri requires Rust and platform-specific dependencies. See: <https://v2.tauri.app/start/prerequisites/>
+
+Linting and formatting:
+
+- Format and lint fix: `bun check`
+
+Documentation with Starlight:
+
+- Start docs site: `cd apps/docs && bun dev`
+- Build docs site: `cd apps/docs && bun build`
+
+WARNING: 'bun' might cause issues with web + native apps in a monorepo. Use 'pnpm' if problems arise.
+
+Update all dependencies: `bunx taze -r`
+
+You can reproduce this setup with the following command:
+
+```bash
+bun create better-t-stack@latest truyGoc --frontend tanstack-router native-unistyles --backend hono --runtime bun --database sqlite --orm drizzle --api trpc --auth --addons turborepo pwa tauri starlight biome husky --examples todo ai --db-setup turso --git --package-manager bun --install
+```
