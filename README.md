@@ -1,6 +1,20 @@
-# truyGoc
+# 🌿truyGoc
 
 This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines React, TanStack Router, Hono, TRPC, and more.
+
+## 🍏 Introduction
+
+This project is a supply chain management system that uses Move on Aptos blockchain to store product information and track the ownership of products.
+
+- Product can be minted by company with useful information
+- Product can be transferred to another company
+- Product can be checked on chain
+- QR code can be generated for a product
+- QR code can be scanned to verify product ownership
+- User and other companies can check product ownership and other information on chain
+- User and other companies do not need to trust any third party to verify product ownership
+- Every product is unique and cannot be replicated on blockchain
+- When third party try to fake product ownership and information, it will be detected on blockchain. For example, when they try to copy product ID on blockchain, it will be detected by unmatchable the human-readable ID on product. If they try to copy every product ID on blockchain, it will be not scalable for large number of products.
 
 ## Features
 

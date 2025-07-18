@@ -9,6 +9,7 @@ import { stream } from 'hono/streaming';
 import { auth } from './lib/auth';
 import { createContext } from './lib/context';
 import { appRouter } from './routers/index';
+import { checkOnChainExist } from './services/chain';
 
 const app = new Hono();
 
@@ -48,8 +49,18 @@ app.post('/ai', async (c) => {
 	return stream(c, (stream) => stream.pipe(result.toDataStream()));
 });
 
-app.get('/', (c) => {
-	return c.text('OK');
+app.get('/', async (c) => {
+	// /?i=12345678
+	const id = c.req.query('i');
+
+	if (!id) {
+		return c.json({ message: 'MISSING ID' });
+	}
+
+	// check on chain
+	const exist = await checkOnChainExist(id);
+
+	return c.json({ id, exist });
 });
 
 export default app;
