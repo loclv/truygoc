@@ -1,10 +1,20 @@
 # 🌿truyGoc
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines React, TanStack Router, Hono, TRPC, and more.
+## Problems
+
+- When buying products online, there is a risk of counterfeit goods due to unverified suppliers or intermediaries.
+- You don’t need to be a reputable seller to deliver products to consumers.
+- There is no reliable way to verify product authenticity during resale or second-hand auctions.
+
+## Solutions
+
+- Use blockchain to store product information and track the ownership of products
 
 ## 🍏 Introduction
 
 This project is a supply chain management system that uses Move on Aptos blockchain to store product information and track the ownership of products.
+
+`truyGoc` is a Vietnamese word (truy gốc) means `trace origin`.
 
 - Product can be minted by company with useful information
 - Product can be transferred to another company
@@ -16,7 +26,9 @@ This project is a supply chain management system that uses Move on Aptos blockch
 - Every product is unique and cannot be replicated on blockchain
 - When third party try to fake product ownership and information, it will be detected on blockchain. For example, when they try to copy product ID on blockchain, it will be detected by unmatchable the human-readable ID on product. If they try to copy every product ID on blockchain, it will be not scalable for large number of products.
 
-## Features
+## Tech Stack
+
+This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines React, TanStack Router, Hono, TRPC, and more.
 
 - **TypeScript** - For type safety and improved developer experience
 - **TanStack Router** - File-based routing with full type safety
