@@ -1,5 +1,7 @@
 # 🌿truyGoc
 
+Note: This project is currently under development!
+
 ## Problems
 
 - When buying products online, there is a risk of counterfeit goods due to unverified suppliers or intermediaries.
